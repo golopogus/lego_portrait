@@ -18,8 +18,8 @@ def closest_colors(img_color):
             closest_match = color
     return(closest_match)
 
-def new_colors(x,y):
-    img_color = closest_colors(get_colors(x,y))
+def new_colors(x,y,img_name):
+    img_color = closest_colors(get_colors(x,y,img_name))
     return img_color
 
 # new_colors = []
