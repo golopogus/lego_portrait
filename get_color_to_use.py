@@ -1,6 +1,6 @@
 import math
 from get_colors_from_img import *
-from available_colors import *
+from available_dmc_colors import *
 
 #pic_size = 48
 avail_colors = get_available_colors('list')

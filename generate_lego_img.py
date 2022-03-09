@@ -1,5 +1,6 @@
 from PIL import Image
 from get_color_to_use import *
+import os
 
 # width = 96
 # height = 96
@@ -13,7 +14,9 @@ def color_count(lego_color,buy_color_code):
 
 
 def lego_img(img_name,width,height):
-    img_path = "C:/Users/dolan/Desktop/lego_portrait/pixelated_images/pixelated_" + img_name + ".png"
+    cwd = str(os.getcwd())
+    img_path = os.path.join(cwd,"pixelated_images","pixelated_" + img_name + ".png")
+    #img_path = "C:/Users/dolan/Desktop/lego_portrait/pixelated_images/pixelated_" + img_name + ".png"
     img = Image.open(img_path)
 
     pix = img.load()
@@ -23,7 +26,8 @@ def lego_img(img_name,width,height):
             lego_color = new_colors(x,y,img_name) 
             buy_color_code = color_count(lego_color, buy_color_code)
             pix[x,y] = lego_color
-            
-    save_path = "C:/Users/dolan/Desktop/lego_portrait/lego_img/lego_" + img_name + ".png"
+
+    save_path = os.path.join(cwd,"lego_img","lego_" + img_name + ".png")      
+    #save_path = "C:/Users/dolan/Desktop/lego_portrait/lego_img/lego_" + img_name + ".png"
     img.save(save_path)
     return buy_color_code

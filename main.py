@@ -1,13 +1,14 @@
 from crop_image import *
 from pixelate_image import *
 from generate_lego_img import *
-from available_colors import *
+from available_dmc_colors import *
 import json
+import os
 
-img = "rengar3"
+img = "mj"
 
-height = 256
-width = 256
+height = 128
+width = 128
 
 crop_image(img)
 

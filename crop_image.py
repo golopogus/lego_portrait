@@ -1,9 +1,12 @@
 # Importing Image class from PIL module
 from PIL import Image
+import os
 
 def crop_image(img_name):
 # Opens a image in RGB mode
-    img_path = "C:/Users/dolan/Desktop/lego_portrait/uncropped_images/" + img_name + ".jpg"
+    cwd = str(os.getcwd())
+    img_path = os.path.join(cwd,"uncropped_images",img_name + ".jpg")
+    #img_path = "C:/Users/dolan/Desktop/lego_portrait/uncropped_images/" + img_name + ".jpg"
     im = Image.open(img_path)
     
     # Size of the image in pixels (size of original image)
@@ -24,11 +27,14 @@ def crop_image(img_name):
     # (It will not change original image)
     im1 = im.crop((left, top, right, bottom))
 
-    save_path = "C:/Users/dolan/Desktop/lego_portrait/cropped_images/cropped_" + img_name + ".png"
+    print(os.path.join(cwd,"cropped_images","cropped_" + img_name + ".png"))
+    save_path = os.path.join(cwd,"cropped_images","cropped_" + img_name + ".png")
+    
+    #save_path = "C:/Users/dolan/Desktop/lego_portrait/cropped_images/cropped_" + img_name + ".png"
 
     im1.save(save_path)
 
-    return 
+    return save_path
 
 
  
