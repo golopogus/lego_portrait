@@ -6,6 +6,7 @@ from available_dmc_colors import *
 avail_colors = get_available_colors('list')
 
 def closest_colors(img_color):
+    #print(img_color)
     r,g,b = img_color
     lowest_val = 10000
     closest_match = ''

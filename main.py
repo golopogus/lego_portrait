@@ -5,10 +5,10 @@ from available_dmc_colors import *
 import json
 import os
 
-img = "mj"
+img = "spider"
 
-height = 128
-width = 128
+height = 48
+width = 48
 
 crop_image(img)
 

@@ -17,8 +17,9 @@ def pixelate_img(img_name, base_width, base_height):
     img = img.resize((base_width,base_height),resample=Image.BILINEAR)
 
     result = img.resize(img.size,Image.NEAREST)
-
-
+    #result = img.quantize(colors = 6)
+    #result = img.convert('RGB')
+    #result = img.convert('P',palette=Image.ADAPTIVE, colors =20) 
     save_path = os.path.join(cwd,"pixelated_images","pixelated_" + img_name + ".png")
     #save_path = "C:/Users/dolan/Desktop/lego_portrait/pixelated_images/pixelated_" + img_name + ".png"
 
